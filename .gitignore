@@ -12,3 +12,4 @@ wheels/
 # Other Directories
 dataset/
 model/
+.ipynb_checkpoints/
