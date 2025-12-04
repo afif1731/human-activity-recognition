@@ -20,7 +20,7 @@ LABEL_ENCODER_PATH = "./model/label_encoder.pkl"
 CONF_THRESH = 0.5
 LABEL_CONF_THRESH = 0.5
 IMG_SIZE = 224
-YOLO_IMGZ = 320
+YOLO_IMGSZ = 320
 FONT = cv2.FONT_HERSHEY_SIMPLEX
 FONT_SCALE = 0.6
 THICKNESS = 2
@@ -85,7 +85,7 @@ while True:
 
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-    results = yolo(rgb_frame, imgsz=YOLO_IMGZ, conf=CONF_THRESH, verbose=False)
+    results = yolo(rgb_frame, imgsz=YOLO_IMGSZ, conf=CONF_THRESH, verbose=False)
     if results and len(results) > 0:
         res = results[0]
         if hasattr(res, "boxes") and res.boxes is not None and len(res.boxes) > 0:
